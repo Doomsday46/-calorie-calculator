@@ -1,15 +1,15 @@
 package com.doomsday.caloriecalculator.dao;
 
+import com.doomsday.caloriecalculator.entity.User;
+
 import javax.sql.DataSource;
 import java.util.List;
 
 public interface UserDao {
 
-     void setDataSource(DataSource dataSource);
-
      void addUser(String name, String surname, Long param_id);
 
-     Object getUserById(Long id);
+     User getUserById(Long id);
 
      List listUsers();
 

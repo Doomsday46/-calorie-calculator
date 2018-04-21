@@ -1,27 +1,20 @@
 package com.doomsday.caloriecalculator.config;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
+@Configuration
 public class JdbcConfig {
 
-    private DataSource dataSource;
-
-    public JdbcConfig(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
-        dataSource.setDriverClassName("org.springframework.spring-jdbc");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/dbcalcal");
-        dataSource.setUsername("root");
-        dataSource.setPassword("");
-
-        this.dataSource = dataSource;
-    }
-
-    public DataSource getDataSource() {
-        return dataSource;
+    @Bean
+    @Primary
+    @ConfigurationProperties ("datasource.properties")
+    public DataSource getDataSource () {
+        return DataSourceBuilder.create().build();
     }
 }

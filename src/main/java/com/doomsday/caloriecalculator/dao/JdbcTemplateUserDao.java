@@ -1,24 +1,26 @@
 package com.doomsday.caloriecalculator.dao;
 
+import com.doomsday.caloriecalculator.config.JdbcConfig;
 import com.doomsday.caloriecalculator.entity.User;
 import com.doomsday.caloriecalculator.mapper.UserMapper;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 @Component
 public class JdbcTemplateUserDao implements UserDao {
 
-    private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
-    @Override
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    public JdbcTemplateUserDao(){
+
+    }
+
+    public JdbcTemplateUserDao(@Autowired JdbcConfig jdbcConfig) {
+        this.jdbcTemplate = new JdbcTemplate(jdbcConfig.getDataSource());
     }
 
     @Override
