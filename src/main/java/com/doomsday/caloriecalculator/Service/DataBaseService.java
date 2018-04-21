@@ -5,7 +5,11 @@ import com.doomsday.caloriecalculator.dao.JdbcTemplateUserDao;
 import com.doomsday.caloriecalculator.dao.UserDao;
 import com.doomsday.caloriecalculator.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+
+import javax.sql.DataSource;
 
 @Service
 public class DataBaseService {
@@ -14,7 +18,6 @@ public class DataBaseService {
     private JdbcTemplateUserDao userDao;
 
     public DataBaseService(){
-
     }
 
     public void addUser(String name, String surname,Long param_id){

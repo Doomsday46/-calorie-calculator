@@ -11,6 +11,8 @@ public interface UserDao {
 
      User getUserById(Long id);
 
+     void setDataSource(DataSource dataSource);
+
      List listUsers();
 
      void removeUser(Long id);
