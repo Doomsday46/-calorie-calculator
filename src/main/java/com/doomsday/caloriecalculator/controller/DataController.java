@@ -18,6 +18,16 @@ public class DataController {
          service.addUser(name, surname, param_id);
     }
 
+    @RequestMapping(value = "/updateUser/{id}/{name}/{surname}/{param_id}")
+    public void updateUser(@PathVariable Long id,@PathVariable String name, @PathVariable String surname, @PathVariable Long param_id) {
+        service.updateUser(id,name, surname, param_id);
+    }
+
+    @RequestMapping(value = "/deleteUser/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        service.deleteUser(id);
+    }
+
     @RequestMapping(value = "/getUser/{id}")
     public User getCalorieWomen(@PathVariable Long id) {
         return service.getUser(id);
