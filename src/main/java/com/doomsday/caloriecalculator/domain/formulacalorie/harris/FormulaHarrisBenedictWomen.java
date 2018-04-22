@@ -4,13 +4,13 @@ import com.doomsday.caloriecalculator.domain.formulacalorie.FormulaCalorie;
 
 public class FormulaHarrisBenedictWomen implements FormulaCalorie {
 
-    private final Double coef = 655.1;
-    private final Double coefWeight = 9.6;
-    private final Double coefHeight = 1.85;
-    private final Double coefAge = 4.68;
-
     @Override
     public double getCountCalorie(Double weight, Double height, Integer age) {
+        if(weight < 0 || height < 0 || age < 0) throw new IllegalArgumentException();
+        Double coef = 655.1;
+        Double coefWeight = 9.6;
+        Double coefHeight = 1.85;
+        Double coefAge = 4.68;
         return (coef + coefWeight * weight + coefHeight * height) - (coefAge * age);
     }
 

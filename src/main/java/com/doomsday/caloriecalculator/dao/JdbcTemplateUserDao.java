@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.List;
+
 @Component
 public class JdbcTemplateUserDao implements UserDao {
 
@@ -27,7 +28,7 @@ public class JdbcTemplateUserDao implements UserDao {
     public void addUser(String name, String surname, Double weight, Double height, Integer age, Double activity) {
         String SQL = "INSERT INTO USER (name, surname,weight,height,age,activity) VALUES (?,?,?,?,?,?)";
 
-        jdbcTemplate.update(SQL, name, surname, weight,height,age,activity);
+        jdbcTemplate.update(SQL, name, surname, weight, height, age, activity);
     }
 
     @Override
@@ -38,7 +39,7 @@ public class JdbcTemplateUserDao implements UserDao {
 
     @Override
     public List listUsers() {
-        String SQL = "SELECT * FROM DEVELOPERS";
+        String SQL = "SELECT * FROM USER";
         return jdbcTemplate.query(SQL, new UserMapper());
     }
 
@@ -51,6 +52,6 @@ public class JdbcTemplateUserDao implements UserDao {
     @Override
     public void updateUser(Long id, String name, String surname, Double weight, Double height, Integer age, Double activity) {
         String SQL = "UPDATE DEVELOPERS SET name = ?, surname = ?, weight = ?,height = ?, age = ?, activity = ? WHERE id = ?";
-        jdbcTemplate.update(SQL, name, surname, weight,height,age,activity, id);
+        jdbcTemplate.update(SQL, name, surname, weight, height, age, activity, id);
     }
 }

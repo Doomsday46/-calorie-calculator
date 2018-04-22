@@ -1,23 +1,19 @@
 package com.doomsday.caloriecalculator.Service;
 
-import com.doomsday.caloriecalculator.config.JdbcConfig;
-import com.doomsday.caloriecalculator.dao.JdbcTemplateUserDao;
 import com.doomsday.caloriecalculator.dao.UserDao;
 import com.doomsday.caloriecalculator.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
-import javax.sql.DataSource;
+import java.util.List;
 
 @Service
 @ComponentScan("com.doomsday.caloriecalculator")
 public class DataBaseService {
 
     @Autowired
-    private JdbcTemplateUserDao userDao;
+    private UserDao userDao;
 
     public DataBaseService(){
     }
@@ -36,5 +32,9 @@ public class DataBaseService {
 
     public User getUser(Long id){
       return userDao.getUserById(id);
+    }
+
+    public List getUsers(){
+        return userDao.listUsers();
     }
 }

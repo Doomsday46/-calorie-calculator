@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class DataController {
 
@@ -32,5 +34,10 @@ public class DataController {
     @RequestMapping(value = "/getUser/{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable Long id) {
         return service.getUser(id);
+    }
+
+    @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
+    public List getUsers() {
+        return service.getUsers();
     }
 }
