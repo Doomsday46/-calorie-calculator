@@ -14,6 +14,9 @@ public class UserMapper implements RowMapper<User> {
         return new User(resultSet.getLong("id"),
                 resultSet.getString("name"),
                 resultSet.getString("surname"),
-                resultSet.getLong("parameter_id"));
+                resultSet.getDouble("weight"),
+                resultSet.getDouble("height"),
+                resultSet.getDouble("age"),
+                resultSet.getDouble("activity"));
     }
 }

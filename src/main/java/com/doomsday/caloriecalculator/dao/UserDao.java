@@ -7,17 +7,15 @@ import java.util.List;
 
 public interface UserDao {
 
-     void addUser(String name, String surname, Long param_id);
+    void addUser(String name, String surname, Double weight, Double height, Integer age, Double activity);
 
-     User getUserById(Long id);
+    User getUserById(Long id);
 
-     void setDataSource(DataSource dataSource);
+    void setDataSource(DataSource dataSource);
 
-     List listUsers();
+    List listUsers();
 
-     void removeUser(Long id);
+    void removeUser(Long id);
 
-     void updateUser(Long id, String name, String surname, Long param_id);
-
-
+    void updateUser(Long id, String name, String surname, Double weight, Double height, Integer age, Double activity);
 }

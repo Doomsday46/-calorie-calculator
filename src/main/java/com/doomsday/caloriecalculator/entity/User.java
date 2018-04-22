@@ -4,13 +4,16 @@ public class User {
 
     private long id;
     private String name, surname;
-    private long parameter_id;
+    private Double weight, height, age, activity;
 
-    public User(long id, String name, String surname, long parameter_id) {
+    public User(long id, String name, String surname, Double weight, Double height, Double age, Double activity) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.parameter_id = parameter_id;
+        this.weight = weight;
+        this.height = height;
+        this.age = age;
+        this.activity = activity;
     }
 
     @Override
@@ -44,11 +47,35 @@ public class User {
         this.surname = surname;
     }
 
-    public long getParameter_id() {
-        return parameter_id;
+    public Double getWeight() {
+        return weight;
     }
 
-    public void setParameter_id(long parameter_id) {
-        this.parameter_id = parameter_id;
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
+    public Double getHeight() {
+        return height;
+    }
+
+    public void setHeight(Double height) {
+        this.height = height;
+    }
+
+    public Double getAge() {
+        return age;
+    }
+
+    public void setAge(Double age) {
+        this.age = age;
+    }
+
+    public Double getActivity() {
+        return activity;
+    }
+
+    public void setActivity(Double activity) {
+        this.activity = activity;
     }
 }

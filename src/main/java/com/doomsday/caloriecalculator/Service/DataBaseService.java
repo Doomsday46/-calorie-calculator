@@ -7,11 +7,13 @@ import com.doomsday.caloriecalculator.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 
 @Service
+@ComponentScan("com.doomsday.caloriecalculator")
 public class DataBaseService {
 
     @Autowired
@@ -20,12 +22,12 @@ public class DataBaseService {
     public DataBaseService(){
     }
 
-    public void addUser(String name, String surname,Long param_id){
-        userDao.addUser(name,surname,param_id);
+    public void addUser(String name, String surname, Double weight, Double height, Integer age, Double activity){
+        userDao.addUser(name, surname, weight,height,age,activity);
     }
 
-    public void updateUser(Long id,String name, String surname,Long param_id){
-        userDao.updateUser( id, name,  surname,param_id);
+    public void updateUser(Long id,String name, String surname, Double weight, Double height, Integer age, Double activity){
+        userDao.updateUser( id, name, surname, weight,height,age,activity);
     }
 
     public void deleteUser(Long id){

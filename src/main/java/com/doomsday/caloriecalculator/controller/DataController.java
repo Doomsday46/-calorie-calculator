@@ -14,14 +14,14 @@ public class DataController {
     @Autowired
     private DataBaseService service;
 
-    @RequestMapping(value = "/user/{name}/{surname}/{param_id}", method = RequestMethod.POST)
-    public void addUser(@PathVariable String name, @PathVariable String surname, @PathVariable Long param_id) {
-         service.addUser(name, surname, param_id);
+    @RequestMapping(value = "/user/{name}/{surname}/{weight}/{height}/{age}/{activity}", method = RequestMethod.POST)
+    public void addUser(@PathVariable String name,@PathVariable String surname,@PathVariable Double weight,@PathVariable Double height,@PathVariable Integer age,@PathVariable Double activity) {
+         service.addUser(name, surname, weight,height,age,activity);
     }
 
-    @RequestMapping(value = "/updateUser/{id}/{name}/{surname}/{param_id}")
-    public void updateUser(@PathVariable Long id,@PathVariable String name, @PathVariable String surname, @PathVariable Long param_id) {
-        service.updateUser(id,name, surname, param_id);
+    @RequestMapping(value = "/updateUser/{id}/{name}/{surname}/{weight}/{height}/{age}/{activity}")
+    public void updateUser(@PathVariable Long id,@PathVariable String name,@PathVariable String surname,@PathVariable Double weight,@PathVariable Double height,@PathVariable Integer age,@PathVariable Double activity) {
+        service.updateUser(id,name, surname, weight,height,age,activity);
     }
 
     @RequestMapping(value = "/deleteUser/{id}")

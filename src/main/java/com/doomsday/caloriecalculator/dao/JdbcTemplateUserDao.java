@@ -24,10 +24,10 @@ public class JdbcTemplateUserDao implements UserDao {
     }
 
     @Override
-    public void addUser(String name, String surname, Long param_id) {
-        String SQL = "INSERT INTO USER (name, surname, parameter_id) VALUES (?,?,?)";
+    public void addUser(String name, String surname, Double weight, Double height, Integer age, Double activity) {
+        String SQL = "INSERT INTO USER (name, surname,weight,height,age,activity) VALUES (?,?,?,?,?,?)";
 
-        jdbcTemplate.update(SQL, name, surname, param_id);
+        jdbcTemplate.update(SQL, name, surname, weight,height,age,activity);
     }
 
     @Override
@@ -49,8 +49,8 @@ public class JdbcTemplateUserDao implements UserDao {
     }
 
     @Override
-    public void updateUser(Long id, String name, String surname, Long param_id) {
-        String SQL = "UPDATE DEVELOPERS SET name = ?, surname = ?, parameter_id = ? WHERE id = ?";
-        jdbcTemplate.update(SQL, name, surname, param_id, id);
+    public void updateUser(Long id, String name, String surname, Double weight, Double height, Integer age, Double activity) {
+        String SQL = "UPDATE DEVELOPERS SET name = ?, surname = ?, weight = ?,height = ?, age = ?, activity = ? WHERE id = ?";
+        jdbcTemplate.update(SQL, name, surname, weight,height,age,activity, id);
     }
 }
