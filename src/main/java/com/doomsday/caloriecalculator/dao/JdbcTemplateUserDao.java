@@ -4,12 +4,12 @@ import com.doomsday.caloriecalculator.entity.User;
 import com.doomsday.caloriecalculator.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
 
-@Component
+@Repository
 public class JdbcTemplateUserDao implements UserDao {
 
     private JdbcTemplate jdbcTemplate;
@@ -25,10 +25,10 @@ public class JdbcTemplateUserDao implements UserDao {
     }
 
     @Override
-    public void addUser(String name, String surname, Double weight, Double height, Integer age, Double activity) {
+    public void addUser(User user) {
         String SQL = "INSERT INTO USER (name, surname,weight,height,age,activity) VALUES (?,?,?,?,?,?)";
 
-        jdbcTemplate.update(SQL, name, surname, weight, height, age, activity);
+        jdbcTemplate.update(SQL, user.getName(),  user.getSurname(),  user.getWeight(),  user.getHeight(), user.getAge(), user.getActivity());
     }
 
     @Override
@@ -50,8 +50,8 @@ public class JdbcTemplateUserDao implements UserDao {
     }
 
     @Override
-    public void updateUser(Long id, String name, String surname, Double weight, Double height, Integer age, Double activity) {
+    public void updateUser(Long id, User user) {
         String SQL = "UPDATE DEVELOPERS SET name = ?, surname = ?, weight = ?,height = ?, age = ?, activity = ? WHERE id = ?";
-        jdbcTemplate.update(SQL, name, surname, weight, height, age, activity, id);
+        jdbcTemplate.update(SQL,user.getName(),  user.getSurname(),  user.getWeight(),  user.getHeight(), user.getAge(), user.getActivity(), id);
     }
 }

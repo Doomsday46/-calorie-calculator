@@ -1,7 +1,7 @@
 package com.doomsday.caloriecalculator.controller;
 
-import com.doomsday.caloriecalculator.Service.DataBaseService;
 import com.doomsday.caloriecalculator.entity.User;
+import com.doomsday.caloriecalculator.service.UserHibernateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +14,9 @@ import java.util.List;
 public class DataController {
 
     @Autowired
-    private DataBaseService service;
+    private UserHibernateService service;
 
-    @RequestMapping(value = "/user/{name}/{surname}/{weight}/{height}/{age}/{activity}", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/{name}/{surname}/{weight}/{height}/{age}/{activity}")
     public void addUser(@PathVariable String name,@PathVariable String surname,@PathVariable Double weight,@PathVariable Double height,@PathVariable Integer age,@PathVariable Double activity) {
          service.addUser(name, surname, weight,height,age,activity);
     }

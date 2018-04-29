@@ -1,5 +1,5 @@
 package com.doomsday.caloriecalculator.domain.formulacalorie;
 
-public interface FormulaCalorie {
+public interface CalorieFormula {
     double getCountCalorie(Double weight, Double height, Integer age);
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserDao {
 
-    void addUser(String name, String surname, Double weight, Double height, Integer age, Double activity);
+    void addUser(User user);
 
     User getUserById(Long id);
 
@@ -17,5 +17,5 @@ public interface UserDao {
 
     void removeUser(Long id);
 
-    void updateUser(Long id, String name, String surname, Double weight, Double height, Integer age, Double activity);
+    void updateUser(Long id, User user);
 }

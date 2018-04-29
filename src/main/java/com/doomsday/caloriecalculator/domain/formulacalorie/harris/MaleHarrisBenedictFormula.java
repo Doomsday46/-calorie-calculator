@@ -1,9 +1,9 @@
 package com.doomsday.caloriecalculator.domain.formulacalorie.harris;
 
 
-import com.doomsday.caloriecalculator.domain.formulacalorie.FormulaCalorie;
+import com.doomsday.caloriecalculator.domain.formulacalorie.CalorieFormula;
 
-public class FormulaHarrisBenedictMan implements FormulaCalorie {
+public class MaleHarrisBenedictFormula implements CalorieFormula {
 
     @Override
     public double getCountCalorie(Double weight, Double height, Integer age) {

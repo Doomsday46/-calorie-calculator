@@ -1,13 +1,42 @@
 package com.doomsday.caloriecalculator.entity;
 
+import javax.persistence.*;
+
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name, surname;
-    private Double weight, height, age, activity;
 
-    public User(long id, String name, String surname, Double weight, Double height, Double age, Double activity) {
+    @Column
+    private String name;
+    @Column
+    private String surname;
+    @Column
+    private Double weight;
+    @Column
+    private Double height;
+    @Column
+    private Integer age;
+    @Column
+    private Double activity;
+
+    public User(){
+
+    }
+
+    public User(long id, String name, String surname, Double weight, Double height, Integer age, Double activity) {
         this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.weight = weight;
+        this.height = height;
+        this.age = age;
+        this.activity = activity;
+    }
+
+    public User(String name, String surname, Double weight, Double height, Integer age, Double activity) {
         this.name = name;
         this.surname = surname;
         this.weight = weight;
@@ -63,11 +92,11 @@ public class User {
         this.height = height;
     }
 
-    public Double getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(Double age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

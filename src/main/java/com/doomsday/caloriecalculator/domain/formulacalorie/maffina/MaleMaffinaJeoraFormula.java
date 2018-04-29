@@ -1,8 +1,8 @@
 package com.doomsday.caloriecalculator.domain.formulacalorie.maffina;
 
-import com.doomsday.caloriecalculator.domain.formulacalorie.FormulaCalorie;
+import com.doomsday.caloriecalculator.domain.formulacalorie.CalorieFormula;
 
-public class FormulaMaffinaJeoraMan implements FormulaCalorie{
+public class MaleMaffinaJeoraFormula implements CalorieFormula {
 
     @Override
     public double getCountCalorie(Double weight, Double height, Integer age) {

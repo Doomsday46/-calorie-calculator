@@ -1,6 +1,6 @@
 package com.doomsday.caloriecalculator.controller;
 
-import com.doomsday.caloriecalculator.Service.FormulaCalorieService;
+import com.doomsday.caloriecalculator.service.FormulaCalorieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

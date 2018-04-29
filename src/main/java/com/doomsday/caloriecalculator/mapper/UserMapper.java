@@ -3,7 +3,6 @@ package com.doomsday.caloriecalculator.mapper;
 import com.doomsday.caloriecalculator.entity.User;
 import org.springframework.jdbc.core.RowMapper;
 
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -16,7 +15,7 @@ public class UserMapper implements RowMapper<User> {
                 resultSet.getString("surname"),
                 resultSet.getDouble("weight"),
                 resultSet.getDouble("height"),
-                resultSet.getDouble("age"),
+                resultSet.getInt("age"),
                 resultSet.getDouble("activity"));
     }
 }

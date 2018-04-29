@@ -6,10 +6,10 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
-        FormulaMaffinaJeoraManTests.class,
+        MaleMaffinaJeoraFormulaTests.class,
         FormulaHarrisBenedicManTests.class,
         FormulaHarrisBenedicWomenTests.class,
-        FormulaMaffinaJeoraWomenTests.class
+        FemaleMaffinaJeoraFormulaTests.class
 })
 public class TestManager {
 }
